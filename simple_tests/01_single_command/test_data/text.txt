@@ -1,0 +1,6 @@
+Hello world
+A shell interprets user commands into system calls
+The shell parses input using tokenization
+Custom shells often rely on `fork()` and `exec()` for execution
+I/O redirection lets users manage data streams
+Shells often support pipelines for command chaining

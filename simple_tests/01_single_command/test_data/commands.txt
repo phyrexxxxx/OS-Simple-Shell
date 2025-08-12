@@ -1,0 +1,7 @@
+ls
+cat text.txt
+whoami
+pwd
+   
+	
+exit
