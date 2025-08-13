@@ -16,7 +16,7 @@
 ├── scripts/
 │   └── test_pipelines.sh    # 主要測試腳本
 ├── test_data/
-│   └── text.txt        # 測試用文本文件 (與題目完全相同)
+│   └── text.txt        # 測試用文本文件
 └── expected/           # (保留給未來擴展)
 ```
 
@@ -220,8 +220,8 @@ exit
 如果 shell 的管道功能實作正確，應該看到：
 
 ```
-=== 雙行程管道測試開始 ===
-[INFO] Testing shell binary: ~/OS-Simple-Shell/my_shell
+=== 雙進程管道測試開始 ===
+[INFO] Testing shell binary: /home/yucskr/OS-Simple-Shell/my_shell
 [INFO] Test data directory: ../test_data
 
 === 環境檢查 ===
@@ -251,5 +251,5 @@ exit
 
 === 測試結果總結 ===
 通過測試: 4/4
-[PASS] 所有雙行程管道測試通過！
+[PASS] 所有雙進程管道測試通過！
 ```

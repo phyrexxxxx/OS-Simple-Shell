@@ -120,7 +120,7 @@ cd ~/OS-Simple-Shell
 ```bash
 cd ~/OS-Simple-Shell/simple_tests/05_multi_pipelines/test_data
 cat < text.txt | head -4 | tail -2 | grep shell > pipeout.txt &
-# 預期：第一行印出最右側指令 (grep) 的子行程 PID；可能另印出 [job_id] pgid
+# 預期：第一行印出最右側指令 (grep) 的子行程 PID；第二行印出 [job_id] pgid
 
 # 確認原檔案
 cat text.txt

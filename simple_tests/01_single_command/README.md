@@ -130,13 +130,40 @@ exit
    ./my_shell 2> error.log
    ```
 
-## 測試擴展
+## 預期測試結果
+如果 shell 的單一進程命令執行功能實作正確，應該看到：
+```
+=== 單一進程命令測試開始 ===
+[INFO] Testing shell binary: /home/yucskr/OS-Simple-Shell/my_shell
+[INFO] Test data directory: ../test_data
 
-此測試框架可以輕鬆擴展：
+=== 環境檢查 ===
+[PASS] Shell binary found and executable
 
-- 添加更多基本命令測試
-- 測試命令參數處理
-- 測試錯誤命令的處理
-- 測試不同長度的輸入行
+=== 測試 1: 基本命令執行 ===
+[INFO] Testing command: ls
+[PASS] ls command executed successfully
+[INFO] Output preview: commands.txt text.txt :/home/yucskr/OS-Simple-Shell/simple_tests/01_single_command/test_data >>> $ :/home/yucskr/OS-Simple-Shell/simple_tests/01_single_command/test_data >>> $ ...
+[INFO] Testing command: pwd
+[PASS] pwd command executed successfully
+[INFO] Output preview: /home/yucskr/OS-Simple-Shell/simple_tests/01_single_command/test_data :/home/yucskr/OS-Simple-Shell/simple_tests/01_single_command/test_data >>> $ :/home/yucskr/OS-Simple-Shell/simple_tests/01_single_command/test_data >>> $ ...
+[INFO] Testing command: whoami
+[PASS] whoami command executed successfully
+[INFO] Output preview: yucskr :/home/yucskr/OS-Simple-Shell/simple_tests/01_single_command/test_data >>> $ :/home/yucskr/OS-Simple-Shell/simple_tests/01_single_command/test_data >>> $ ...
+[INFO] Testing command: cat text.txt
+[PASS] cat command executed successfully
+[INFO] Output preview: Hello world A shell interprets user commands into system calls The shell parses input using tokenization ...
+[PASS] Basic commands test PASSED
 
-只需要修改 `test_single_command.sh` 中的相關函數即可。
+=== 測試 2: 空行處理 (只有空格/Tab的行) ===
+[INFO] Testing empty line handling...
+[PASS] Shell correctly handles empty lines and continues execution
+
+=== 測試 3: Exit 命令 ===
+[INFO] Testing exit command...
+[PASS] Exit command works correctly
+
+=== 測試結果總結 ===
+通過測試: 3/3
+[PASS] 所有單一進程命令測試通過！
+```

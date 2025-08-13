@@ -233,7 +233,7 @@ exit
 
 ```
 === I/O 重導向測試開始 ===
-[INFO] Testing shell binary: ~/OS-Simple-Shell/my_shell
+[INFO] Testing shell binary: /home/yucskr/OS-Simple-Shell/my_shell
 [INFO] Test data directory: ../test_data
 
 === 環境檢查 ===
@@ -252,8 +252,8 @@ exit
 [INFO] Expected: creates out_test.txt with same content as text.txt
 [PASS] Output file 'out_test.txt' was created successfully
 [PASS] Output redirection content verification: Files match exactly
-[INFO] Original file lines: 6, Output file lines: 6
 [PASS] Output redirection 'cat text.txt > out_test.txt' executed successfully
+[INFO] Original file lines: 6, Output file lines: 6
 
 === 測試 3: 輸出重導向文件創建功能 ===
 [INFO] Testing file creation: echo 'test content' > new_created_file.txt
@@ -262,10 +262,10 @@ exit
 [PASS] File creation with correct content verified
 
 === 測試 4: 綜合重導向功能測試 ===
-[INFO] Testing combined functionality: create temp file, then redirect it
-[PASS] Final output contains expected line: "line1"
-[PASS] Final output contains expected line: "line2"
-[PASS] Final output contains expected line: "line3"
+[INFO] Testing combined functionality: input and output redirection together
+[PASS] Final output contains expected line: "Hello world"
+[PASS] Final output contains expected line: "A shell interprets user commands into system calls"
+[PASS] Final output contains expected line: "I/O redirection lets users manage data streams"
 [PASS] Combined redirection functionality works correctly
 
 === 測試結果總結 ===

@@ -104,7 +104,7 @@ cd ~/OS-Simple-Shell
 ```bash
 # 測試背景執行（列出目前目錄）
 ls &
-# 預期：印出一個 PID（可能另有一行 [job_id] pgid）
+# 預期：第一行印出最右側指令 (ls) 的子行程 PID；第二行印出 [job_id] pgid
 
 # 測試背景執行（短暫程序）
 sleep 1 &
@@ -157,19 +157,20 @@ exit
 如果 shell 的背景執行功能實作正確，應該看到：
 ```
 === 背景執行 ( & ) 測試開始 ===
-[INFO] Testing shell binary: ~/OS-Simple-Shell/my_shell
+[INFO] Testing shell binary: /home/yucskr/OS-Simple-Shell/my_shell
 
 === 環境檢查 ===
 [PASS] Shell binary found and executable
 
 === 測試 1: ls & 的背景執行 PID 輸出 ===
 [INFO] Running: ls & (with exit)
-[PASS] Found background PID printed: 3686
+[PASS] Found background PID printed: 16197
+[INFO] Output preview: :/home/yucskr/OS-Simple-Shell/simple_tests/04_background/scripts >>> $ 16197 [1] 16197 :/home/yucskr/OS-Simple-Shell/simple_tests/04_background/scripts >>> $ test_background.sh  ...
 
 === 測試 2: sleep 1 & 的 PID 應為短暫存活的程序 ===
 [INFO] Running: sleep 1 & (with exit)
-[INFO] Printed PID: 3702 (checking /proc)
-[PASS] PID 3702 exists in /proc (background process observed)
+[INFO] Printed PID: 16213 (checking /proc)
+[PASS] PID 16213 exists in /proc (background process observed)
 
 === 測試 3: 背景工作資訊行格式 ([job_id] pgid) ===
 [INFO] Running: sleep 1 & (with exit) to check job info line
